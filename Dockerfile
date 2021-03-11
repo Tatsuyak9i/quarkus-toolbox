@@ -1,5 +1,5 @@
   
-FROM quay.io/openshiftlabs/cloudnative-workspaces-quarkus:2.6
+FROM cloudnative-workspaces-quarkus:2.6
 USER root
 
 RUN \ 
