@@ -19,7 +19,7 @@ RUN chgrp -R 0 /opt/apache-maven-3.6.3 && \
     chmod -R g=u /opt/apache-maven-3.6.3
 ENV PATH=/opt/apache-maven-3.6.3/bin:$PATH
 
-RUN useradd -u 1001 -r -g 0 -d /home/jboss -s /sbin/nologin \
+RUN usermod -u 1001 -r -g 0 -d /home/jboss -s /sbin/nologin \
     -c "Default Application User" default 
     
 USER 1001
