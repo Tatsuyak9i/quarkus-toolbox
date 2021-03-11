@@ -1,12 +1,15 @@
   
-FROM cloudnative-workspaces-quarkus:2.6
+FROM mandrel-20-rhel8:latest
 USER root
 
 RUN \ 
-cd /tmp && \
-wget http://mirror.centos.org/centos/8/PowerTools/x86_64/os/Packages/libstdc++-static-8.3.1-5.1.el8.x86_64.rpm && \
-wget http://mirror.centos.org/centos/8/BaseOS/x86_64/os/Packages/libstdc++-8.3.1-5.1.el8.x86_64.rpm && \
-rpm -ivh libstdc* && \
-rm *.rpm
+cd /opt && \
+curl https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -o apache-maven.tar.gz && \
+tar -xzf apache-maven.tar.gz && \
+rm -rf apache-maven.tar.gz
+
+RUN chgrp -R 0 apache-maven-3.6.3 && \
+    chmod -R g=u apache-maven-3.6.3
+ENV PATH=/opt/apache-maven-3.6.3/bin:$PATH
 
 USER 1001
