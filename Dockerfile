@@ -15,10 +15,9 @@ mv ./oc /usr/bin && \
 chgrp 0 /usr/bin/oc && \
 chmod g=u /usr/bin/oc
 
-RUN chgrp -R 0 /opt/apache-maven-3.6.3 && \
-    chmod -R g=u /opt/apache-maven-3.6.3
-ENV PATH=/opt/apache-maven-3.6.3/bin:$PATH
+RUN chgrp -R 0 /opt/apache-maven-3.6.3 /home/quarkus && \
+    chmod -R g=u /opt/apache-maven-3.6.3 /home/quarkus 
 
-RUN usermod -u 1001 -d /home/jboss 
+ENV PATH=/opt/apache-maven-3.6.3/bin:$PATH
     
 USER 1001
