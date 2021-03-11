@@ -16,7 +16,7 @@ chgrp 0 /usr/bin/oc && \
 chmod g=u /usr/bin/oc
 
 RUN chgrp -R 0 apache-maven-3.6.3 && \
-    chmod -R g=u apache-maven-3.6.3 &&
+    chmod -R g=u apache-maven-3.6.3
 ENV PATH=/opt/apache-maven-3.6.3/bin:$PATH
 
 USER 1001
