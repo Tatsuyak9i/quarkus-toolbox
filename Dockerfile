@@ -5,8 +5,8 @@ USER root
 RUN \ 
 cd /opt && \
 curl https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -o apache-maven.tar.gz && \
-tar -xzf apache-maven.tar.gz && \
-rm -rf apache-maven.tar.gz &&
+tar -xzf ./apache-maven.tar.gz && \
+rm -f ./apache-maven.tar.gz
 
 RUN \
 curl https://downloads-openshift-console.apps.ocp1.rh.axies.org/amd64/linux/oc.tar -o oc.tar && \
