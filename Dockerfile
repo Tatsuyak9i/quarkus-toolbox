@@ -18,6 +18,7 @@ chmod g=u /usr/bin/oc
 RUN chgrp -R 0 /opt/apache-maven-3.6.3 /home/quarkus && \
     chmod -R g=u /opt/apache-maven-3.6.3 /home/quarkus 
 
-ENV PATH=/opt/apache-maven-3.6.3/bin:$PATH
+ENV PATH=/opt/apache-maven-3.6.3/bin:$PATH \
+    HOME=/home/quarkus
     
 USER 1001
