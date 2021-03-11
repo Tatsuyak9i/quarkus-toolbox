@@ -8,8 +8,8 @@ curl https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.
 tar -xzf apache-maven.tar.gz && \
 rm -rf apache-maven.tar.gz && \
 curl https://downloads-openshift-console.apps.ocp1.rh.axies.org/amd64/linux/oc.tar -o oc.tar && \
-tar xf oc.tar && \
-mv oc /usr/bin && \
+tar xf ./oc.tar && \
+mv ./oc /usr/bin && \
 chgrp 0 /usr/bin/oc && \
 chmod g=u /usr/bin/oc
 
